@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="lexuesitRootPane" onMouseMoved="#backToParent" prefHeight="757.0" prefWidth="1568.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegjistroLexuesController">
+    <children>
+        <AnchorPane prefHeight="63.0" prefWidth="1568.0" style="-fx-background-color: lightblue;">
+            <children>
+                <ImageView fitHeight="49.0" fitWidth="104.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/multiple-users-silhouette.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="79.0" layoutY="17.0" prefHeight="29.0" prefWidth="91.0" text="Lexuesit" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Button fx:id="regjistroButton" layoutX="24.0" layoutY="86.0" mnemonicParsing="false" onAction="#shtoLexues" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: lightblue; -fx-font-weight: bold; -fx-font-size: 14;" text="Regjistro" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="fshijeButton" layoutX="180.0" layoutY="86.0" mnemonicParsing="false" onMousePressed="#fshijLexuesin" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: lightblue;" text="Fshije" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="23.0" fitWidth="29.0" layoutX="31.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/plus-button.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="23.0" fitWidth="36.0" layoutX="186.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/cancel-button.png" />
+            </image>
+        </ImageView>
+        <TableView fx:id="lexuesitTableView" layoutX="20.0" layoutY="149.0" prefHeight="596.0" prefWidth="1538.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="col_emri" onEditCommit="#changedEmriCellEvent" prefWidth="129.0" text="Emri" />
+                <TableColumn fx:id="col_mbiemri" onEditCommit="#changedMbiemriCellEvent" prefWidth="142.0" text="Mbiemri" />
+                <TableColumn fx:id="col_adresa" onEditCommit="#changedAdresaCellEvent" prefWidth="265.0" text="Adresa" />
+                <TableColumn fx:id="col_dataRegjistrimit" prefWidth="205.0" text="Data e Regjistrimit" />
+                <TableColumn fx:id="col_kontakti" onEditCommit="#changedKontaktiCellEvent" prefWidth="348.0" text="Kontakti (Email/Tel)" />
+                <TableColumn fx:id="col_dataLindjes" prefWidth="229.0" text="Viti Lindjes" />
+                <TableColumn fx:id="col_pagesa" prefWidth="144.0" text="Pagesa" />
+            </columns>
+        </TableView>
+        <Button fx:id="perditesoButton" layoutX="337.0" layoutY="87.0" mnemonicParsing="false" onAction="#perditesoLexuesin" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: lightblue;" text="Perditeso" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="343.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/update-cloud.png" />
+            </image>
+        </ImageView>
+      <ImageView fx:id="previousParentImageView" fitHeight="43.0" fitWidth="49.0" layoutX="1515.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/left-chevron.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="raportButton" layoutX="492.0" layoutY="87.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: lightblue;" text="Raport" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="499.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/newspaper.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

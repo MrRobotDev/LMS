@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1057.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ShtoLibrinController">
+    <children>
+      <AnchorPane layoutY="-8.0">
+         <children>
+              <Pane fx:id="contentPane" layoutY="9.0" prefHeight="709.0" prefWidth="1063.0" style="-fx-background-color: white;">
+                  <children>
+                      <Label layoutX="196.0" layoutY="161.0" prefHeight="27.0" prefWidth="117.0" text="ISBN">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Label>
+                      <TextField fx:id="isbnTextField" layoutX="196.0" layoutY="188.0" prefHeight="27.0" prefWidth="269.0" promptText="9780062802" />
+                      <Label layoutX="196.0" layoutY="241.0" prefHeight="19.0" prefWidth="117.0" text="Titulli">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Label>
+                      <TextField fx:id="titulliTextField" layoutX="196.0" layoutY="266.0" prefHeight="27.0" prefWidth="269.0" promptText="War Storm" />
+                      <Label layoutX="196.0" layoutY="313.0" prefHeight="19.0" prefWidth="117.0" text="Kategoria">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Label>
+                      <TextField fx:id="kategoriaTextField" layoutX="196.0" layoutY="340.0" prefHeight="27.0" prefWidth="269.0" promptText="History , Drama" />
+                      <Label layoutX="196.0" layoutY="383.0" prefHeight="19.0" prefWidth="117.0" text="Autoret">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Label>
+                      <TextField fx:id="autoretTextField" layoutX="196.0" layoutY="409.0" prefHeight="27.0" prefWidth="269.0" promptText="Victoria Aveyard" />
+                      <Label layoutX="597.0" layoutY="314.0" prefHeight="19.0" prefWidth="117.0" text="Data e Regjistrimit">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Label>
+                      <Label layoutX="597.0" layoutY="381.0" prefHeight="19.0" prefWidth="117.0" text="Data e Publikimit">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Label>
+                      <TextField fx:id="publikuesiTextField" layoutX="597.0" layoutY="256.0" prefHeight="27.0" prefWidth="269.0" promptText="HarperCollins Publishers" />
+                      <Label layoutX="597.0" layoutY="229.0" prefHeight="27.0" prefWidth="117.0" text="Publikuesi">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Label>
+                      <TextField fx:id="nrKopjeveTextField" layoutX="597.0" layoutY="186.0" prefHeight="27.0" prefWidth="269.0" promptText="9" />
+                      <Label layoutX="597.0" layoutY="161.0" prefHeight="19.0" prefWidth="117.0" text="Numri i Kopjeve">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Label>
+                      <TextArea fx:id="pershkrimiTextField" layoutX="195.0" layoutY="478.0" prefHeight="171.0" prefWidth="671.0" promptText="PRAISE FOR RED QUEEN: “A sizzling, imaginative thriller, where romance and revolution collide, where power and justice duel. It’s exhilarating. Compelling. Action-packed. Unputdownable." />
+                      <Label layoutX="196.0" layoutY="459.0" prefHeight="19.0" prefWidth="117.0" text="Pershkrimi">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Label>
+                      <Button fx:id="shtoButton" layoutX="195.0" layoutY="666.0" mnemonicParsing="false" onAction="#shtoLibrinAction" prefHeight="19.0" prefWidth="671.0" text="Shto">
+                          <font>
+                              <Font name="System Bold" size="13.0" />
+                          </font>
+                      </Button>
+                      <DatePicker fx:id="dataRegjistrimitDatePicker" layoutX="597.0" layoutY="341.0" prefHeight="25.0" prefWidth="269.0" />
+                      <DatePicker fx:id="dataPublikimitDatePicker" layoutX="597.0" layoutY="410.0" prefHeight="25.0" prefWidth="269.0" promptText="25/01/2018" />
+                  <AnchorPane layoutX="2.0" layoutY="-1.0" prefHeight="82.0" prefWidth="1057.0" style="-fx-background-color: lightblue;">
+                     <children>
+                            <Label alignment="TOP_CENTER" layoutX="470.0" layoutY="28.0" prefHeight="20.0" prefWidth="117.0" text="Shto Librin" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+                            </Label>
+                        <ImageView fx:id="backButton" fitHeight="40.0" fitWidth="49.0" layoutX="1011.0" layoutY="35.0" onMousePressed="#goBack" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/left-arrow.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="backButton1" fitHeight="50.0" fitWidth="58.0" layoutX="14.0" layoutY="17.0" onMousePressed="#goBack" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/book-with-add-button.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  </children>
+                  <padding>
+                      <Insets bottom="10.0" left="20.0" />
+                  </padding>
+              </Pane>
+         </children>
+      </AnchorPane>
+    </children>
+</Pane>

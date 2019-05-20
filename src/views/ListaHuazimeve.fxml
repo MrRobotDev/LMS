@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="693.0" prefWidth="1037.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ListaHuazimeveController">
+   <children>
+      <AnchorPane prefHeight="74.0" prefWidth="1037.0" style="-fx-background-color: lightblue;">
+         <children>
+            <Label layoutX="438.0" layoutY="15.0" prefHeight="44.0" prefWidth="162.0" text="Lista e Huazimeve" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView layoutX="64.0" layoutY="128.0" prefHeight="498.0" prefWidth="909.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="43.0" text="#" />
+          <TableColumn fx:id="col_lexuesi" prefWidth="167.0" text="Lexuesi" />
+            <TableColumn fx:id="col_titulli" prefWidth="209.0" text="Titulli" />
+            <TableColumn fx:id="col_isbn" prefWidth="196.0" text="ISBN" />
+            <TableColumn fx:id="col_dataHuazimit" prefWidth="150.0" text="Data Huazimit" />
+            <TableColumn fx:id="col_dataKthimit" prefWidth="143.0" text="Data Kthimit" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

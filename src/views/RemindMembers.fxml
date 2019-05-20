@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="740.0" prefWidth="974.0" style="-fx-background-color: #F5F5F5;"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.RemindMembersController">
+    <children>
+        <ImageView fitHeight="66.0" fitWidth="159.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../images/reminder.png"/>
+            </image>
+        </ImageView>
+        <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="110.0"
+                style="-fx-background-color: #4CBDFF;" text="Njofto" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Button>
+        <TextField layoutX="792.0" layoutY="33.0" prefHeight="35.0" prefWidth="169.0"
+                   style="-fx-background-color: white; -fx-border-color: #A9A9A9;"/>
+        <Label layoutX="736.0" layoutY="42.0" prefHeight="17.0" prefWidth="48.0"
+               style="-fx-font-weight: bold; -fx-font-size: 14;" text="Kerko :">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <TableView layoutX="14.0" layoutY="108.0" prefHeight="614.0" prefWidth="946.0">
+            <columns>
+                <TableColumn prefWidth="60.0" text="C1"/>
+                <TableColumn prefWidth="165.0" text="C2"/>
+                <TableColumn prefWidth="383.0" text="C2"/>
+                <TableColumn prefWidth="183.0" text="C1"/>
+                <TableColumn prefWidth="154.0" text="C2"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

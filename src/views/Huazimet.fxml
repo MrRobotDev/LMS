@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="huazimiAnchorPane" prefHeight="572.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HuazimetController">
+   <children>
+      <AnchorPane prefHeight="102.0" prefWidth="739.0" style="-fx-background-color: lightblue;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="150.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/hand-holding-up-a-book.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="297.0" layoutY="33.0" prefHeight="37.0" prefWidth="145.0" text="Regjistro Huazimin" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="previousImageView" fitHeight="43.0" fitWidth="40.0" layoutX="685.0" layoutY="31.0" onMouseClicked="#loadMain" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/left-arrow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="39.0" layoutY="143.0" prefHeight="24.0" prefWidth="100.0" text="Lexuesi :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="lexuesiTextField" layoutX="139.0" layoutY="136.0" prefHeight="31.0" prefWidth="203.0" promptText="John Doe" />
+      <TextField fx:id="libriTextField" layoutX="139.0" layoutY="209.0" prefHeight="31.0" prefWidth="203.0" promptText="The Pursuit of Happiness" />
+      <Label alignment="CENTER" layoutX="39.0" layoutY="216.0" prefHeight="24.0" prefWidth="100.0" text="Libri :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="isbnTextField" layoutX="139.0" layoutY="274.0" prefHeight="31.0" prefWidth="203.0" promptText="123456789" />
+      <Label alignment="CENTER" layoutX="39.0" layoutY="274.0" prefHeight="31.0" prefWidth="100.0" text="ISBN : ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="39.0" layoutY="341.0" prefHeight="31.0" prefWidth="100.0" text="Referenca ID : ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="referencaIdTextField" layoutX="139.0" layoutY="341.0" prefHeight="31.0" prefWidth="203.0" promptText="1" />
+      <Label alignment="CENTER" layoutX="39.0" layoutY="410.0" prefHeight="31.0" prefWidth="100.0" text="Data Huazimit : ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="39.0" layoutY="478.0" prefHeight="31.0" prefWidth="100.0" text="Data Kthimit :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="regjistroHuaziminButton" layoutX="425.0" layoutY="527.0" mnemonicParsing="false" onAction="#addReference" prefHeight="31.0" prefWidth="138.0" style="-fx-font-weight: bold; -fx-background-color: lightblue; -fx-font-size: 13;" text="Regjistro Huazimin" textFill="WHITE" />
+      <Button fx:id="listaHuazimeveButton" layoutX="584.0" layoutY="527.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="138.0" style="-fx-font-weight: bold; -fx-background-color: lightblue; -fx-font-size: 13;" text="Lista e Huazimeve" textFill="WHITE" />
+      <AnchorPane layoutX="384.0" layoutY="136.0" prefHeight="373.0" prefWidth="336.0" style="-fx-background-color: #F5F5F5;">
+         <children>
+            <ImageView fitHeight="122.0" fitWidth="154.0" layoutX="107.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/studen-reading.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="27.0" layoutY="167.0" prefHeight="24.0" prefWidth="100.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="ID : " />
+            <Label layoutX="27.0" layoutY="213.0" prefHeight="24.0" prefWidth="100.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Emri : " />
+            <Label layoutX="27.0" layoutY="258.0" prefHeight="24.0" prefWidth="100.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Mbiemri : " />
+            <Label layoutX="27.0" layoutY="305.0" prefHeight="24.0" prefWidth="122.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Huazimi i Fundit :" />
+            <Label fx:id="idLabel" layoutX="149.0" layoutY="167.0" prefHeight="24.0" prefWidth="122.0" style="-fx-font-weight: bold; -fx-font-size: 14;" textAlignment="CENTER" textFill="#66c988" />
+            <Label fx:id="emriLabel" layoutX="149.0" layoutY="213.0" prefHeight="24.0" prefWidth="122.0" style="-fx-font-weight: bold; -fx-font-size: 14;" textFill="#66c988" />
+            <Label fx:id="mbiemriLabel" layoutX="149.0" layoutY="258.0" prefHeight="24.0" prefWidth="122.0" style="-fx-font-weight: bold; -fx-font-size: 14;" textFill="#66c988" />
+            <Label fx:id="huazimiFunditLabel" layoutX="149.0" layoutY="305.0" prefHeight="24.0" prefWidth="122.0" style="-fx-font-weight: bold; -fx-font-size: 14;" textFill="#66c988" />
+         </children>
+      </AnchorPane>
+      <DatePicker fx:id="dataHuazimitDatePicker" layoutX="139.0" layoutY="410.0" prefHeight="31.0" prefWidth="203.0" promptText="MM/DD/YYYY" />
+      <DatePicker fx:id="dataKthimitDatePicker" layoutX="139.0" layoutY="478.0" prefHeight="31.0" prefWidth="203.0" promptText="MM/DD/YYYY" />
+      <Label layoutX="527.0" layoutY="116.0" prefHeight="17.0" prefWidth="50.0" text="Lexuesi">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="reloadImageView" fitHeight="24.0" fitWidth="33.0" layoutX="384.0" layoutY="531.0" onMousePressed="#detailsLoad" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/reload.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

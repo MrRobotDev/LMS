@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane id="rootPane" fx:id="rootPane" prefHeight="849.0" prefWidth="1564.0" style="-fx-background-color: #F5F5F5" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.KryefaqjaController">
+    <children>
+        <MenuBar fx:id="headMenu" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="1564.0" style="-fx-background-color: lightgrey;">
+            <menus>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" style="-fx-background-color:black;" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </MenuBar>
+        <Pane fx:id="leftPanel" layoutY="55.0" prefHeight="795.0" prefWidth="291.0" style="-fx-background-color: #F5F5F5;">
+            <children>
+                <MenuButton fx:id="librateMenuButton" alignment="CENTER" layoutX="42.0" layoutY="301.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Librat">
+                    <items>
+                        <MenuItem fx:id="shtoLibrinMenuItem" mnemonicParsing="false" onAction="#loadSecond" text="Shto Librin" />
+                        <MenuItem mnemonicParsing="false" onAction="#loadTableView" text="Tabela e Librave" />
+                    </items>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </MenuButton>
+                <Button fx:id="kryefaqjaMenuButton" alignment="CENTER" layoutX="41.0" layoutY="205.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Kryefaqja">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+                <MenuButton fx:id="lexuesitMenuButton" alignment="CENTER" layoutX="43.0" layoutY="395.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Lexuesit">
+                    <items>
+                        <MenuItem fx:id="regjistroLexuesMenuItem" mnemonicParsing="false" onAction="#loadRegjistroLexuesForm" text="Tabela" />
+                  <MenuItem mnemonicParsing="false" text="Raporte" />
+                    </items>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </MenuButton>
+                <MenuButton fx:id="preferencatMenuButton" alignment="CENTER" layoutX="44.0" layoutY="490.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Huazimet">
+                    <items>
+                        <MenuItem fx:id="huazimetMenuItem" mnemonicParsing="false" onAction="#loadHuazimet" text="Shto Huazimet" />
+                        <MenuItem fx:id="listaHuazimeveMenuItem" mnemonicParsing="false" onAction="#LoadHuazimetForm" text="Lista" />
+                    </items>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </MenuButton>
+                <MenuButton alignment="CENTER" layoutX="44.0" layoutY="579.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Raportet">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Librat" />
+                        <MenuItem fx:id="LexuesitMenuItem" mnemonicParsing="false" onAction="#loadLexuesiReports" text="Lexuesit" />
+                    </items>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </MenuButton>
+                <MenuButton fx:id="adminMenuButton" alignment="CENTER" layoutX="44.0" layoutY="675.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Admin">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                    </items>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </MenuButton>
+                <Separator layoutX="277.0" layoutY="1.0" maxWidth="23.0" orientation="VERTICAL" prefHeight="784.0" prefWidth="23.0" style="-fx-max-width: 20;" />
+                <ImageView fitHeight="165.0" fitWidth="169.0" layoutX="63.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/biblioteka.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <AnchorPane layoutX="306.0" layoutY="103.0" prefHeight="136.0" prefWidth="262.0" style="-fx-background-color: white;">
+            <children>
+                <ImageView fitHeight="90.0" fitWidth="97.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/reading.png" />
+                    </image>
+                </ImageView>
+                <Separator layoutX="128.0" layoutY="23.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="6.0" />
+                <Label alignment="CENTER" layoutX="26.0" layoutY="104.0" prefHeight="17.0" prefWidth="67.0" style="-fx-font-weight: bold;" text="Lexuesit">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="145.0" layoutY="36.0" prefHeight="54.0" prefWidth="103.0" style="-fx-font-weight: bold; -fx-font-size: 20;" text="30">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="306.0" layoutY="276.0" prefHeight="147.0" prefWidth="736.0" style="-fx-background-color: white;">
+            <children>
+                <Label layoutX="14.0" layoutY="6.0" prefHeight="20.0" prefWidth="120.0" style="-fx-font-weight: bold;" text="Raportet - Sot">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <effect>
+                        <Lighting>
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect>
+                </Label>
+                <Separator layoutX="14.0" layoutY="26.0" maxWidth="153.0" prefHeight="17.0" prefWidth="717.0" style="-fx-max-width: 800;" />
+                <Pane layoutX="14.0" layoutY="44.0" prefHeight="90.0" prefWidth="206.0" style="-fx-background-color: #F4A460;">
+                    <children>
+                        <ImageView fitHeight="54.0" fitWidth="60.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/book.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="89.0" layoutY="18.0" prefHeight="17.0" prefWidth="103.0" text="Libra te ri" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="TodayNewBooksNumber" alignment="CENTER" layoutX="114.0" layoutY="43.0" prefHeight="17.0" prefWidth="54.0" text="0" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="269.0" layoutY="44.0" prefHeight="90.0" prefWidth="206.0" style="-fx-background-color: lightgreen;">
+                    <children>
+                        <ImageView fitHeight="54.0" fitWidth="60.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/book.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="74.0" layoutY="14.0" prefHeight="25.0" prefWidth="128.0" text="Libra te huazuar" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="TodayBorrowedBooksNumber" alignment="CENTER" layoutX="103.0" layoutY="41.0" prefHeight="17.0" prefWidth="54.0" text="5" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="523.0" layoutY="44.0" prefHeight="90.0" prefWidth="206.0" style="-fx-background-color: lightblue;">
+                    <children>
+                        <ImageView fitHeight="54.0" fitWidth="60.0" layoutX="15.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/multiple-users-silhouette.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="69.0" layoutY="17.0" prefHeight="25.0" prefWidth="128.0" text="Lexues te ri" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="TodayNewReadersNumber" alignment="CENTER" layoutX="106.0" layoutY="44.0" prefHeight="17.0" prefWidth="54.0" text="8" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="306.0" layoutY="465.0" prefHeight="147.0" prefWidth="736.0" style="-fx-background-color: white;">
+            <children>
+                <Label layoutX="14.0" layoutY="6.0" prefHeight="20.0" prefWidth="162.0" style="-fx-font-weight: bold;" text="Raportet - Java e Fundit">
+                    <effect>
+                        <Lighting>
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="14.0" layoutY="26.0" maxWidth="153.0" prefHeight="17.0" prefWidth="717.0" style="-fx-max-width: 800;" />
+                <Pane layoutX="524.0" layoutY="43.0" prefHeight="90.0" prefWidth="206.0" style="-fx-background-color: lightblue;">
+                    <children>
+                        <ImageView fitHeight="54.0" fitWidth="60.0" layoutX="15.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/multiple-users-silhouette.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="69.0" layoutY="17.0" prefHeight="25.0" prefWidth="128.0" text="Lexues te ri" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="106.0" layoutY="44.0" prefHeight="17.0" prefWidth="54.0" text="20" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="270.0" layoutY="43.0" prefHeight="90.0" prefWidth="206.0" style="-fx-background-color: lightgreen;">
+                    <children>
+                        <ImageView fitHeight="54.0" fitWidth="60.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/book.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="74.0" layoutY="14.0" prefHeight="25.0" prefWidth="128.0" text="Libra te huazuar" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="103.0" layoutY="41.0" prefHeight="17.0" prefWidth="54.0" text="23" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="15.0" layoutY="43.0" prefHeight="90.0" prefWidth="206.0" style="-fx-background-color: #F4A460;">
+                    <children>
+                        <ImageView fitHeight="54.0" fitWidth="60.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/book.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="89.0" layoutY="18.0" prefHeight="17.0" prefWidth="103.0" text="Libra te ri" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="114.0" layoutY="43.0" prefHeight="17.0" prefWidth="54.0" text="4" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="306.0" layoutY="659.0" prefHeight="147.0" prefWidth="736.0" style="-fx-background-color: white;">
+            <children>
+                <Label layoutX="14.0" layoutY="6.0" prefHeight="20.0" prefWidth="169.0" style="-fx-font-weight: bold;" text="Raportet - Muaji i Fundit">
+                    <effect>
+                        <Lighting>
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="14.0" layoutY="26.0" maxWidth="153.0" prefHeight="17.0" prefWidth="717.0" style="-fx-max-width: 800;" />
+                <Pane layoutX="15.0" layoutY="43.0" prefHeight="90.0" prefWidth="206.0" style="-fx-background-color: #F4A460;">
+                    <children>
+                        <ImageView fitHeight="54.0" fitWidth="60.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/book.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="89.0" layoutY="18.0" prefHeight="17.0" prefWidth="103.0" text="Libra te ri" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="114.0" layoutY="43.0" prefHeight="17.0" prefWidth="54.0" text="8" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="270.0" layoutY="43.0" prefHeight="90.0" prefWidth="206.0" style="-fx-background-color: lightgreen;">
+                    <children>
+                        <ImageView fitHeight="54.0" fitWidth="60.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/book.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="74.0" layoutY="14.0" prefHeight="25.0" prefWidth="128.0" text="Libra te huazuar" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="103.0" layoutY="41.0" prefHeight="17.0" prefWidth="54.0" text="65" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="524.0" layoutY="43.0" prefHeight="90.0" prefWidth="206.0" style="-fx-background-color: lightblue;">
+                    <children>
+                        <ImageView fitHeight="54.0" fitWidth="60.0" layoutX="15.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/multiple-users-silhouette.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="69.0" layoutY="17.0" prefHeight="25.0" prefWidth="128.0" text="Lexues te ri" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="106.0" layoutY="44.0" prefHeight="17.0" prefWidth="54.0" text="40" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="780.0" layoutY="103.0" prefHeight="136.0" prefWidth="262.0" style="-fx-background-color: white;">
+            <children>
+                <ImageView fitHeight="90.0" fitWidth="97.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/library.png" />
+                    </image>
+                </ImageView>
+                <Separator layoutX="128.0" layoutY="23.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="6.0" />
+                <Label alignment="CENTER" layoutX="26.0" layoutY="104.0" prefHeight="17.0" prefWidth="67.0" style="-fx-font-weight: bold;" text="Librat">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="145.0" layoutY="36.0" prefHeight="54.0" prefWidth="103.0" style="-fx-font-weight: bold; -fx-font-size: 20;" text="12">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Separator layoutX="1089.0" layoutY="61.0" orientation="VERTICAL" prefHeight="784.0" prefWidth="6.0" />
+        <BarChart fx:id="huazimetChart" categoryGap="0.0" layoutX="1109.0" layoutY="423.0" prefHeight="374.0" prefWidth="440.0">
+            <xAxis>
+                <CategoryAxis label="Librat" side="BOTTOM">
+                    <tickLabelFont>
+                        <Font size="12.0" />
+                    </tickLabelFont>
+                </CategoryAxis>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Huazimet" side="LEFT" />
+            </yAxis>
+        </BarChart>
+        <PieChart fx:id="lexuesitRegjistruarPieChart" layoutX="1115.0" layoutY="88.0" prefHeight="262.0" prefWidth="428.0" />
+    </children>
+    <effect>
+        <DropShadow />
+    </effect>
+</Pane>
